@@ -33,9 +33,12 @@
       "files": [
         "src/**/*.ts",
         "tsconfig.json",
-        "../tsconfig.base.web.json"
+        "../../tsconfig.base.json",
+        "../../tsconfig.base.web.json"
       ],
       "output": [
+        "**/*.js",
+        "**/*.js.map",
         "**/*.d.ts",
         "**/*.d.ts.map",
         "tsconfig.tsbuildinfo",

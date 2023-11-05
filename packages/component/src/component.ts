@@ -5,7 +5,7 @@
  */
 
 import {LitElement, html, css} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, property} from 'lit/decorators.js';
 
 @customElement('my-element')
 export class MyComponent extends LitElement {
@@ -15,7 +15,12 @@ export class MyComponent extends LitElement {
     }
   `;
 
+  #greeting = 'Hello';
+
+  @property()
+  accessor name = 'Web';
+
   override render() {
-    return html`<p>Hello Web</p>`;
+    return html`<p>$${this.#greeting} ${this.name}</p>`;
   }
 }

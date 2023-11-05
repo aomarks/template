@@ -4,5 +4,7 @@ node_modules/
 *.tgz
 *.d.ts
 *.d.ts.map
+*.js.map
 .eslintcache
 .DS_Store
+packages/*/**/*.js

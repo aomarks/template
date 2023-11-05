@@ -33,9 +33,12 @@
       "files": [
         "src/**/*.ts",
         "tsconfig.json",
-        "../tsconfig.base.node.json"
+        "../../tsconfig.base.json",
+        "../../tsconfig.base.node.json"
       ],
       "output": [
+        "**/*.js",
+        "**/*.js.map",
         "**/*.d.ts",
         "**/*.d.ts.map",
         "tsconfig.tsbuildinfo",
@@ -46,5 +49,8 @@
     "test": {
       "command": "echo TODO"
     }
+  },
+  "dependencies": {
+    "@types/node": "^20.8.10"
   }
 }
