@@ -1,9 +1,9 @@
-name: Tests (Node)
+name: Test (Node)
 
 on: [push, pull_request]
 
 jobs:
-  tests:
+  test:
     timeout-minutes: 20
     runs-on: ${{ matrix.os }}
     strategy:
