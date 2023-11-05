@@ -48,7 +48,11 @@
       "clean": "if-file-deleted"
     },
     "test": {
-      "command": "node --test --test-reporter=spec test/",
+      "#comment": [
+        "node 21 --test takes a glob, but not 18 or 20, ",
+        "and we use xargs instead of shell expansion for windows compatibility"
+      ],
+      "command": "find test -type f -name \"*.test.js\" | xargs node --test --test-reporter=spec",
       "env": {
         "FORCE_COLOR": "2"
       },
