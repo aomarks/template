@@ -20,6 +20,7 @@
   "files": [
     "**/*.js",
     "**/*.d.ts",
+    "!test/",
     "!src/",
     "!.wireit"
   ],
@@ -47,7 +48,15 @@
       "clean": "if-file-deleted"
     },
     "test": {
-      "command": "echo TODO"
+      "command": "node --test --test-reporter=spec \"test/**/*.test.js\"",
+      "env": {
+        "FORCE_COLOR": "2"
+      },
+      "files": [],
+      "output": [],
+      "dependencies": [
+        "build"
+      ]
     }
   },
   "dependencies": {

@@ -20,6 +20,7 @@
   "files": [
     "**/*.js",
     "**/*.d.ts",
+    "!test/",
     "!src/",
     "!.wireit"
   ],
@@ -47,10 +48,18 @@
       "clean": "if-file-deleted"
     },
     "test": {
-      "command": "echo TODO"
+      "command": "web-test-runner \"test/**/*.test.js\" --node-resolve --playwright --browsers chromium",
+      "files": [],
+      "output": [],
+      "dependencies": [
+        "build"
+      ]
     }
   },
   "dependencies": {
     "lit": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.3"
   }
 }

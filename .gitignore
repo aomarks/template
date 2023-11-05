@@ -3,6 +3,7 @@ node_modules/
 *.tsbuildinfo
 *.tgz
 *.d.ts
+!temp-chai-types.d.ts
 *.d.ts.map
 *.js.map
 .eslintcache

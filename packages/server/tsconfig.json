@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.node.json",
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDir": "src/",
     "outDir": ".",
     "tsBuildInfoFile": "tsconfig.tsbuildinfo"
   },
