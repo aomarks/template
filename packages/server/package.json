@@ -22,7 +22,7 @@
     "**/*.d.ts",
     "!test/",
     "!src/",
-    "!.wireit"
+    "!.wireit/"
   ],
   "scripts": {
     "build": "wireit",

@@ -22,7 +22,7 @@
     "**/*.d.ts",
     "!test/",
     "!src/",
-    "!.wireit"
+    "!.wireit/"
   ],
   "scripts": {
     "build": "wireit",
@@ -58,8 +58,5 @@
   },
   "dependencies": {
     "lit": "^3.0.2"
-  },
-  "devDependencies": {
-    "@types/mocha": "^10.0.3"
   }
 }
