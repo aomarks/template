@@ -21,7 +21,8 @@
   "scripts": {
     "build": "wireit",
     "test": "wireit",
-    "lint": "wireit"
+    "lint": "wireit",
+    "format": "wireit"
   },
   "wireit": {
     "build": {
