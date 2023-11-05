@@ -1,6 +1,6 @@
 # template
 
-An template layout for a web + node project
+My template for a modern web + node project
 
 ## Tests
 
