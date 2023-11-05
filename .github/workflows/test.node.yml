@@ -1,0 +1,42 @@
+name: Tests (Node)
+
+on: [push, pull_request]
+
+jobs:
+  tests:
+    timeout-minutes: 20
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # All supported Node versions on Linux.
+          - node: 18
+            os: ubuntu-22.04
+          - node: 20
+            os: ubuntu-22.04
+          - node: 21
+            os: ubuntu-22.04
+
+          # Oldest and newest supported Node versions on macOS.
+          - node: 18
+            os: macos-13
+          - node: 21
+            os: macos-13
+
+          # Oldest and newest supported Node versions on Windows.
+          - node: 18
+            os: windows-2022
+          - node: 21
+            os: windows-2022
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - uses: google/wireit@setup-github-actions-caching/v1
+
+      - run: npm ci
+      - run: npm test

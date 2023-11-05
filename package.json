@@ -21,6 +21,8 @@
   "scripts": {
     "build": "wireit",
     "test": "wireit",
+    "test:web": "wireit",
+    "test:node": "wireit",
     "lint": "wireit",
     "format": "wireit"
   },
@@ -33,7 +35,17 @@
     },
     "test": {
       "dependencies": [
-        "./packages/component:test",
+        "test:web",
+        "test:node"
+      ]
+    },
+    "test:web": {
+      "dependencies": [
+        "./packages/component:test"
+      ]
+    },
+    "test:node": {
+      "dependencies": [
         "./packages/server:test"
       ]
     },
