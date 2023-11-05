@@ -1,0 +1,82 @@
+{
+  "name": "@aomarks/template",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A template web and node project",
+  "author": "Alexander Marks <aomarks@gmail.com>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/aomarks/template#readme",
+  "bugs": {
+    "url": "https://github.com/aomarks/template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aomarks/template.git",
+    "directory": "packages/core"
+  },
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "wireit",
+    "test": "wireit",
+    "lint": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "./packages/component:build",
+        "./packages/server:build"
+      ]
+    },
+    "test": {
+      "dependencies": [
+        "./packages/component:test",
+        "./packages/server:test"
+      ]
+    },
+    "format": {
+      "command": "prettier \"./packages/*/src/**/*.ts\" --check --cache --cache-strategy=metadata --write",
+      "files": [
+        ".prettierrc.json",
+        "packages/*/src/**/*.ts"
+      ],
+      "output": []
+    },
+    "lint": {
+      "dependencies": [
+        "lint:eslint",
+        "lint:prettier"
+      ]
+    },
+    "lint:eslint": {
+      "command": "eslint --color --cache --cache-location .eslintcache \"packages/*/src/**/*.ts\"",
+      "files": [
+        ".eslintrc.cjs",
+        "packages/*/src/**/*.ts",
+        "packages/*/src/**/*.ts"
+      ],
+      "output": [
+        ".eslintcache"
+      ]
+    },
+    "lint:prettier": {
+      "command": "prettier \"./packages/*/src/**/*.ts\" --check --cache --cache-strategy=metadata",
+      "files": [
+        ".prettierrc.json",
+        "packages/*/src/**/*.ts",
+        "packages/*/src/**/*.ts"
+      ],
+      "output": []
+    }
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.0",
+    "@web/test-runner": "^0.18.0",
+    "eslint": "^8.53.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "wireit": "^0.14.1"
+  }
+}

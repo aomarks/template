@@ -1,0 +1,53 @@
+{
+  "name": "@aomarks/template-component",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Template component",
+  "author": "Alexander Marks <aomarks@gmail.com>",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/aomarks/template#readme",
+  "bugs": {
+    "url": "https://github.com/aomarks/template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aomarks/template.git",
+    "directory": "packages/component"
+  },
+  "type": "module",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "files": [
+    "**/*.js",
+    "**/*.d.ts",
+    "!src/",
+    "!.wireit"
+  ],
+  "scripts": {
+    "build": "wireit",
+    "test": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc --pretty",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json",
+        "../tsconfig.base.web.json"
+      ],
+      "output": [
+        "**/*.d.ts",
+        "**/*.d.ts.map",
+        "tsconfig.tsbuildinfo",
+        "!src/"
+      ],
+      "clean": "if-file-deleted"
+    },
+    "test": {
+      "command": "echo TODO"
+    }
+  },
+  "dependencies": {
+    "lit": "^3.0.2"
+  }
+}
