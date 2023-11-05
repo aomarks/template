@@ -48,7 +48,7 @@
       "clean": "if-file-deleted"
     },
     "test": {
-      "command": "node --test --test-reporter=spec \"test/**/*.test.js\"",
+      "command": "node --test --test-reporter=spec test/",
       "env": {
         "FORCE_COLOR": "2"
       },
