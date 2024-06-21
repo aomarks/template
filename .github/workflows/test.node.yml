@@ -1,33 +1,40 @@
+# References:
+#   https://github.com/actions/runner-images
+#   https://nodejs.org/en/about/previous-releases
+#   https://github.com/actions/checkout
+#   https://github.com/actions/setup-node
+#   https://github.com/google/wireit?tab=readme-ov-file#github-actions-caching
+
 name: Test (Node)
 
 on: [push, pull_request]
 
 jobs:
   test-node:
-    timeout-minutes: 20
+    timeout-minutes: 15
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         include:
-          # All supported Node versions on Linux.
-          - node: 18
+          # All supported Node versions on latest Linux.
+          - node: 18 # Maintenance
             os: ubuntu-22.04
-          - node: 20
+          - node: 20 # LTS
             os: ubuntu-22.04
-          - node: 21
+          - node: 22 # Current
             os: ubuntu-22.04
 
-          # Oldest and newest supported Node versions on macOS.
+          # Oldest and newest supported Node versions on latest macOS.
           - node: 18
-            os: macos-13
-          - node: 21
-            os: macos-13
+            os: macos-14
+          - node: 22
+            os: macos-14
 
-          # Oldest and newest supported Node versions on Windows.
+          # Oldest and newest supported Node versions on latest Windows.
           - node: 18
             os: windows-2022
-          - node: 21
+          - node: 22
             os: windows-2022
 
     steps:

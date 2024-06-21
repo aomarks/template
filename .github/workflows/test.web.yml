@@ -1,3 +1,10 @@
+# References:
+#   https://github.com/actions/runner-images
+#   https://nodejs.org/en/about/previous-releases
+#   https://github.com/actions/checkout
+#   https://github.com/actions/setup-node
+#   https://github.com/google/wireit?tab=readme-ov-file#github-actions-caching
+
 name: Test (Web)
 
 on: [push, pull_request]
@@ -11,8 +18,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 21
+          node-version: 20 # LTS
           cache: npm
+      - uses: google/wireit@setup-github-actions-caching/v1
 
       - run: npm ci
       - run: npx playwright install --with-deps chromium
