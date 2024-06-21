@@ -86,14 +86,15 @@
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4",
-    "@types/mocha": "^10.0.3",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@web/dev-server": "^0.4.0",
-    "@web/test-runner": "^0.18.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.14.7",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@web/dev-server": "^0.4.5",
+    "@web/test-runner": "^0.18.2",
     "@web/test-runner-playwright": "^0.11.0",
-    "eslint": "^8.53.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.2.2",
-    "wireit": "^0.14.1"
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2",
+    "wireit": "^0.14.4"
   }
 }
