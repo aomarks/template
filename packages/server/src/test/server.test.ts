@@ -5,7 +5,7 @@
  */
 
 import test from 'node:test';
-import {strict as assert} from 'node:assert';
+import assert from 'node:assert/strict';
 
 test('synchronous passing test', async (t) => {
   assert.strictEqual(1, 1);
