@@ -1,6 +1,6 @@
 # References:
 #   https://github.com/actions/runner-images
-#   https://nodejs.org/en/about/previous-releases
+#   https://github.com/nodejs/release#release-schedule
 #   https://github.com/actions/checkout
 #   https://github.com/actions/setup-node
 #   https://github.com/google/wireit?tab=readme-ov-file#github-actions-caching
@@ -11,16 +11,16 @@ on: [push, pull_request]
 
 jobs:
   test-web:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20 # LTS
+          node-version: 22 # LTS
           cache: npm
-      - uses: google/wireit@setup-github-actions-caching/v1
+      - uses: google/wireit@setup-github-actions-caching/v2
 
       - run: npm ci
       - run: npx playwright install --with-deps chromium
