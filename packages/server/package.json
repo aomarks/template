@@ -64,6 +64,6 @@
     }
   },
   "dependencies": {
-    "@types/node": "^20.14.7"
+    "@types/node": "^22.9.0"
   }
 }
