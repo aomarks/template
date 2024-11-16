@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import test from 'node:test';
 import assert from 'node:assert/strict';
+import test from 'node:test';
 
-test('synchronous passing test', async (t) => {
+void test('synchronous passing test', async (t) => {
   assert.strictEqual(1, 1);
 
   await t.test('subtest 1', () => {
