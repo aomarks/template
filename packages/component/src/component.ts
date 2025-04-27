@@ -4,23 +4,31 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import {LitElement, html, css} from 'lit';
+import {LitElement, html, css, type CSSResult} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 
-@customElement('my-element')
+@customElement('my-component')
 export class MyComponent extends LitElement {
-  static override styles = css`
-    :host {
-      display: block;
-    }
-  `;
+  static override styles: CSSResult[] = [
+    css`
+      :host {
+        display: block;
+      }
+    `,
+  ];
 
   #greeting = 'Hello';
 
   @property()
   accessor name = 'Web';
 
-  override render() {
+  override render(): unknown {
     return html`<p>$${this.#greeting} ${this.name}</p>`;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'my-component': MyComponent;
   }
 }
